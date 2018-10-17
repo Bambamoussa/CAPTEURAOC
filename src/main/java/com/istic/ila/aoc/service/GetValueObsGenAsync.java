@@ -1,4 +1,4 @@
 package com.istic.ila.aoc.service;
 
-public interface UpdateObsGenAsync {
+public interface GetValueObsGenAsync {
 }

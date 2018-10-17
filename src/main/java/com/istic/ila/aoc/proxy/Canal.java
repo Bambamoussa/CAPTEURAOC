@@ -1,4 +1,8 @@
 package com.istic.ila.aoc.proxy;
 
-public class Canal {
+import com.istic.ila.aoc.methodInvocation.Callable;
+
+public interface Canal {
+	
+	void update();
 }

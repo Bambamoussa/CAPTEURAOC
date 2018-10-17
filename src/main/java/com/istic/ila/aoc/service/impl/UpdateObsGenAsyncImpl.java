@@ -1,4 +1,6 @@
 package com.istic.ila.aoc.service.impl;
 
-public class ObsGenAsyncImpl {
+import com.istic.ila.aoc.service.UpdateObsGenAsync;
+
+public class UpdateObsGenAsyncImpl implements UpdateObsGenAsync {
 }

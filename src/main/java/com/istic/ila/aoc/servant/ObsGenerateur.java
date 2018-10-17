@@ -1,4 +1,7 @@
 package com.istic.ila.aoc.servant;
 
-public interface ObsGenerateur {
+import java.util.Observer;
+
+public interface ObsGenerateur extends Observer {
+
 }
