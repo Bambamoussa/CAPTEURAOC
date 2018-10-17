@@ -1,4 +1,7 @@
 package com.istic.ila.aoc.client;
 
-public class Generateur {
+public interface Generateur {
+
+	void setValue(int value);
+
 }

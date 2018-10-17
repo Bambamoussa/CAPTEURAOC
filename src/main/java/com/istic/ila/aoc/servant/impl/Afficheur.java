@@ -1,19 +1,12 @@
-package com.istic.ila.aoc.view;
+package com.istic.ila.aoc.servant.impl;
 
-import com.google.inject.Stage;
+import com.istic.ila.aoc.servant.ObsGenerateur;
 
-public class Afficheur /* extends Application */ {
-	/*
-	public static void main(String[] args) {
-		launch(args);
-	}
+import java.util.Observable;
+
+public class Afficheur implements ObsGenerateur {
 	
-	@Override
-	public void start(Stage primaryStage) {
-		primaryStage.setWidth(1024);
-		primaryStage.setHeight(968);
-		primaryStage.setTitle("JavaFX Xebia");
-		primaryStage.show();
+	public void update(Observable observable, Object o) {
+	
 	}
-	*/
 }
