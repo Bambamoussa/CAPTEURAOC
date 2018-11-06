@@ -2,19 +2,21 @@ package com.istic.ila.aoc.proxy.impl;
 
 import com.istic.ila.aoc.client.Generateur;
 import com.istic.ila.aoc.future.impl.FutureImpl;
-import com.istic.ila.aoc.methodInvocation.Callable;
 import com.istic.ila.aoc.proxy.Canal;
-import com.istic.ila.aoc.service.impl.UpdateObsGenAsyncImpl;
 
-public class UpdateCanalImpl extends UpdateObsGenAsyncImpl implements Canal {
+import java.util.Observable;
+
+public class UpdateCanalImpl implements Canal {
 	
-	public FutureImpl update(Generateur g) {
+	private CanalImpl canal;
+	
+	public FutureImpl getValue(Generateur g) {
 		
 		return null;
 	}
 	
 	@Override
-	public void update() {
-	
+	public void update(Observable observable, Object o) {
+		canal.update(observable, o);
 	}
 }

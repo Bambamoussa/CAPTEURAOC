@@ -1,8 +1,6 @@
 package com.istic.ila.aoc.proxy;
 
-import com.istic.ila.aoc.methodInvocation.Callable;
+import com.istic.ila.aoc.service.ObsGenAsync;
 
-public interface Canal {
-	
-	void update();
+public interface Canal extends ObsGenAsync {
 }
