@@ -1,10 +1,18 @@
 package com.istic.ila.aoc.strategy;
 
-import com.istic.ila.aoc.client.Generateur;
+import com.istic.ila.aoc.client.IGenerateur;
 
-public interface Strategy {
+public class Strategy {
 	
-	void update();
+	public Strategy() {
 	
-	void execute(Generateur g);
+	}
+	
+	public void update() {
+	
+	}
+	
+	public void execute(IGenerateur g) {
+	
+	}
 }

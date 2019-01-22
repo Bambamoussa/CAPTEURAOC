@@ -1,6 +1,10 @@
 package com.istic.ila.aoc.service;
 
-import java.util.Observer;
+import com.istic.ila.aoc.client.IGenerateur;
 
-public interface ObsGenAsync extends Observer {
+import java.util.concurrent.Future;
+
+public interface ObsGenAsync {
+	
+	Future update(final IGenerateur generateur);
 }

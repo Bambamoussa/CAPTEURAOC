@@ -1,7 +1,16 @@
 package com.istic.ila.aoc.client;
 
-public interface Generateur {
+import java.util.Observable;
 
-	void setValue(int value);
-
+public class Generateur extends Observable {
+	
+	private int value;
+	
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

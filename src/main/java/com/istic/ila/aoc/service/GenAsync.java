@@ -1,4 +1,10 @@
 package com.istic.ila.aoc.service;
 
-public class GenAsync {
+
+import java.util.concurrent.Future;
+
+public interface GenAsync {
+	
+	Future getValue();
+	
 }
