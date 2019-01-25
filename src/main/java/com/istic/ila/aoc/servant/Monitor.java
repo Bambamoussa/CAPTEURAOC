@@ -1,8 +1,9 @@
 package com.istic.ila.aoc.servant;
 
 import com.istic.ila.aoc.client.IGenerateur;
+import com.istic.ila.aoc.service.ObsGenerator;
 
-public class Monitor implements ObsGenerator{
+public class Monitor implements ObsGenerator {
 	
 	private int value;
 	

@@ -1,6 +1,9 @@
 package com.istic.ila.aoc.servant;
 
+import java.util.concurrent.Future;
+
 public interface Observer<T> {
-	
-	void update(T g);
+
+    Future<T> update(T g);
+
 }

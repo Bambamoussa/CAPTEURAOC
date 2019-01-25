@@ -8,10 +8,6 @@ public class Strategy {
 	
 	}
 	
-	public void update() {
-	
-	}
-	
 	public void execute(IGenerateur g) {
 	
 	}
