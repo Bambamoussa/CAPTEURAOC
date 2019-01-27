@@ -1,6 +1,8 @@
 package com.istic.ila.aoc.client;
 
-public interface IGenerateur {
+import com.istic.ila.aoc.servant.Subject;
+
+public interface IGenerateur extends Subject {
 	
 	void setValue(int value);
 	

@@ -1,6 +1,7 @@
 package com.istic.ila.aoc.proxy;
 
 import com.istic.ila.aoc.client.IGenerateur;
+import com.istic.ila.aoc.servant.Afficheur;
 import com.istic.ila.aoc.servant.Observer;
 import com.istic.ila.aoc.servant.Subject;
 
@@ -18,21 +19,16 @@ public class Canal implements Observer, Subject {
     private static Logger LOGGER = Logger.getLogger(Canal.class.getName());
 
 	private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(2);
+
+	private List<Observer> observers = new ArrayList<>();
+
+	private int value;
 	
-	private final IGenerateur generateur;
-	
-	private List<Observer<IGenerateur>> observers = new ArrayList<>();
-	
-	public Canal(IGenerateur generateur) {
-		this.generateur = generateur;
+	public Canal() {
 	}
-	
+
 	public ScheduledExecutorService getExecutorService() {
 		return executorService;
-	}
-	
-	public IGenerateur getGenerateur() {
-		return generateur;
 	}
 
     @Override
@@ -43,7 +39,6 @@ public class Canal implements Observer, Subject {
             LOGGER.info("Canal service delay : " + time + "ms.");
             return executorService.schedule(() -> {
                 observers.forEach(o -> o.update(generateur));
-                return null;
             }, time, TimeUnit.MILLISECONDS);
         }
         return null;
@@ -57,5 +52,13 @@ public class Canal implements Observer, Subject {
     @Override
     public void detach(Observer observer) {
         observers.remove(observer);
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }

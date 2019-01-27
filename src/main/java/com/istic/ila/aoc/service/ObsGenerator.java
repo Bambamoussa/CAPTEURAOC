@@ -1,9 +1,7 @@
 package com.istic.ila.aoc.service;
 
-import com.istic.ila.aoc.client.IGenerateur;
+import com.istic.ila.aoc.servant.Observer;
 
-public interface ObsGenerator {
-
-    void update(IGenerateur generateur);
+public interface ObsGenerator extends Observer {
 
 }
