@@ -77,6 +77,8 @@ Cette diffusion n'a pas de contrainte au niveau de la génération, mais doit af
 
 Le booléen `settable` est muté à `true` lorsque les Afficheurs ont tous reçus la valeur du générateur. Ce booléen est requis pour le setter.
 
+D'autres valeurs peuvent parvenir jusqu'aux Afficheurs, mais elles seront en attente d'affichage si la précédente n'a pas été affichée par les tous les autres.
+
 ### Causal Diffusion
         if(value == null) {
             throw new BadConfigurationException("value");
