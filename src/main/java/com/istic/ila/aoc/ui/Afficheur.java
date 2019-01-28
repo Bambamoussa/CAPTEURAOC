@@ -9,12 +9,9 @@ public class Afficheur extends JPanel {
 
     private JLabel jLabel;
 
-    private Color color;
-
     public Afficheur(Color color, String value) {
         super();
         this.value = value;
-        this.color = color;
         this.setBackground(color);
         this.setLayout(new BorderLayout());
         jLabel = new JLabel(value, SwingConstants.CENTER);
@@ -24,17 +21,9 @@ public class Afficheur extends JPanel {
 
     public void update(String message) {
         this.value = message;
-        updateUI();
-    }
+        this.jLabel.setText(value);
+        this.jLabel.repaint();
 
-
-    @Override
-    public void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setBackground(color);
-        jLabel.repaint();
-        jLabel.setText(value);
-        jLabel.setFont(new Font("Serif", Font.PLAIN, 25));
     }
 
 }
