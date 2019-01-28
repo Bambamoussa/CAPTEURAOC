@@ -24,7 +24,7 @@ public class DisplayTest {
 
     @Before
     public void setUp() {
-        this.display = new Display();
+        this.display = new Display("Test");
     }
 
     @Test

@@ -53,7 +53,7 @@ public class Canal implements Generator, ObserverGenerator {
     public void update(Generator observable) {
         this.generator = observable;
         Update update = new UpdateImpl(this.observerGenerator, this);
-        this.updateExecutorService.schedule(update, random.nextInt(11), TimeUnit.SECONDS);
+        this.updateExecutorService.schedule(update, random.nextInt(1000), TimeUnit.MILLISECONDS);
     }
 
     @Override

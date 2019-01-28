@@ -1,34 +1,41 @@
 package com.istic.ila.aoc.ui;
 
-import com.istic.ila.aoc.proxy.Canal;
-import com.istic.ila.aoc.servant.Observer;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.Future;
 
-public class Afficheur extends JPanel implements Observer {
+public class Afficheur extends JPanel {
 
-    private int value;
+    private String value;
 
     private JLabel jLabel;
 
-    public Afficheur(Color color) {
+    private Color color;
+
+    public Afficheur(Color color, String value) {
         super();
+        this.value = value;
+        this.color = color;
         this.setBackground(color);
         this.setLayout(new BorderLayout());
-        jLabel = new JLabel(String.valueOf(value), SwingConstants.CENTER);
+        jLabel = new JLabel(value, SwingConstants.CENTER);
         jLabel.setFont(new Font("Serif", Font.PLAIN, 25));
         this.add(jLabel, BorderLayout.CENTER);
-
     }
+
+    public void update(String message) {
+        this.value = message;
+        updateUI();
+    }
+
 
     @Override
-    public Future update(Object g) {
-        if (g instanceof Canal) {
-            this.value = ((Canal) g).getValue();
-            repaint();
-        }
-        return null;
+    public void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setBackground(color);
+        jLabel.repaint();
+        jLabel.setText(value);
+        jLabel.setFont(new Font("Serif", Font.PLAIN, 25));
     }
+
 }
+

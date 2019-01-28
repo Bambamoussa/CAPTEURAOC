@@ -24,6 +24,7 @@ public class AtomicDiffusion<T> implements Diffusion<T> {
         T ret = Objects.requireNonNull(this.value);
 
         if(this.generator.numberOfObservers() == this.observers.size()) {
+            System.out.println("Test");
             this.observers.clear();
             this.generator.tick();
         }
